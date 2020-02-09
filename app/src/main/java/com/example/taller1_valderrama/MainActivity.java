@@ -22,6 +22,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         serie.add(0);
         serie.add(1);
+        serie.add(1);
     }
 
 
@@ -30,19 +31,16 @@ public class MainActivity extends AppCompatActivity {
         recursivoFibonacci();
         calculo=  findViewById(R.id.calculo);
         int ultimoNum= serie.get(serie.size()-1);
-        calculo.setText(calculo.getText()+","+ultimoNum);
+        calculo.setText(calculo.getText()+"\n"+ultimoNum);
     }
 
     public void recursivoFibonacci(){
         int ultimo=serie.size();
-        if(serie.get(ultimo-1)== 1){
-            serie.add(2);
-        }
-        else {
+
             int fib1=serie.get(ultimo-1);
             int fib2=serie.get(ultimo-2);
             serie.add(fib1+fib2);
-        }
+
     }
 
 
