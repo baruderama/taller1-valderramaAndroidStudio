@@ -36,9 +36,11 @@ public class MainActivity extends AppCompatActivity {
         recursivoFibonacci();
         calculo=  findViewById(R.id.calculo);
         int ultimoNum= serie.get(serie.size()-1);
-        calculo.setText(calculo.getText()+"\n"+ultimoNum);
         intent.putExtra("numero",ultimoNum);
         startActivity(intent);
+        calculo.setText(calculo.getText()+"\n"+ultimoNum);
+
+
     }
 
     public void recursivoFibonacci(){
