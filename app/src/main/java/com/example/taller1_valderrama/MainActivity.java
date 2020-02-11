@@ -2,6 +2,7 @@ package com.example.taller1_valderrama;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -23,15 +24,21 @@ public class MainActivity extends AppCompatActivity {
         serie.add(0);
         serie.add(1);
         serie.add(1);
+
+
+
     }
 
 
     public void calcularFibonacci(View v) {
+        Intent intent= new Intent (v.getContext(), Activity2.class);
         TextView calculo;
         recursivoFibonacci();
         calculo=  findViewById(R.id.calculo);
         int ultimoNum= serie.get(serie.size()-1);
         calculo.setText(calculo.getText()+"\n"+ultimoNum);
+        intent.putExtra("numero",ultimoNum);
+        startActivity(intent);
     }
 
     public void recursivoFibonacci(){
