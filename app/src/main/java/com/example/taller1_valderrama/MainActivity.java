@@ -31,16 +31,20 @@ public class MainActivity extends AppCompatActivity {
 
 
     public void calcularFibonacci(View v) {
-        Intent intent= new Intent (v.getContext(), Activity2.class);
+
         TextView calculo;
-        recursivoFibonacci();
+        EditText numeroDeIteraciones;
+        numeroDeIteraciones= findViewById(R.id.campoTexto);
+        int numerito= Integer.parseInt(numeroDeIteraciones.getText().toString());
+
+        for(int i=0;i<numerito;i++)
+            recursivoFibonacci();
         calculo=  findViewById(R.id.calculo);
-        int ultimoNum= serie.get(serie.size()-1);
-        intent.putExtra("numero",ultimoNum);
+        //int ultimoNum= serie.get(serie.size()-1);
+        Intent intent= new Intent (v.getContext(), Activity2.class);
+        intent.putExtra("numero",serie);
         startActivity(intent);
-        calculo.setText(calculo.getText()+"\n"+ultimoNum);
-
-
+        //calculo.setText(calculo.getText()+"\n"+ultimoNum);
     }
 
     public void recursivoFibonacci(){
