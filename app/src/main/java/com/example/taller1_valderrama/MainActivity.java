@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.webkit.WebView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -26,6 +27,12 @@ public class MainActivity extends AppCompatActivity {
         serie.add(1);
 
 
+
+    }
+
+    public void paginaWeb(View v){
+       // Intent intent= new Intent (v.getContext(), WebActivity.class);
+       // startActivity(intent);
 
     }
 
