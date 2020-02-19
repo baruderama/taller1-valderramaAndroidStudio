@@ -8,6 +8,7 @@ import android.view.View;
 import android.webkit.WebView;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -17,17 +18,12 @@ import java.util.List;
 public class MainActivity extends AppCompatActivity {
 
     public ArrayList <Integer> serie= new ArrayList<Integer> ();
+    public ArrayList <Integer> numerosMult= new ArrayList<Integer> ();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        serie.add(0);
-        serie.add(1);
-        serie.add(1);
-
-
-
     }
 
     public void paginaWeb(View v){
@@ -36,8 +32,28 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    public void factorialCalculo(View v){
+        numerosMult.clear();
+        Spinner spi= findViewById(R.id.spinner);
+        int numFactorial= Integer.parseInt(spi.getSelectedItem().toString());
+        int numFactoResultado=1;
+        for(int i= 1; i<=numFactorial;i++){
+            numerosMult.add(i);
+            numFactoResultado=numFactoResultado*i;
+        }
+        numerosMult.add(numFactoResultado);
+        Intent intent= new Intent (v.getContext(), FactorialActivity.class);
+        intent.putExtra("factorial",numerosMult);
+        startActivity(intent);
+    }
+
 
     public void calcularFibonacci(View v) {
+
+        serie.clear();
+        serie.add(0);
+        serie.add(1);
+        serie.add(1);
 
         TextView calculo;
         EditText numeroDeIteraciones;

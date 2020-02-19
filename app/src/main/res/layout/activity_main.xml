@@ -36,8 +36,7 @@
         android:layout_height="102dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnFibo">
+        app:layout_constraintStart_toStartOf="parent">
 
         <TextView
             android:id="@+id/calculo"
@@ -58,6 +57,27 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/fibonacci"
         android:onClick="paginaWeb"/>
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Calcular Factorial"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/spinner"
+        android:onClick="factorialCalculo"/>
+
+    <Spinner
+        android:id="@+id/spinner"
+        android:layout_width="280dp"
+        android:layout_height="34dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnFibo"
+        android:entries="@array/numeros"/>
+
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
