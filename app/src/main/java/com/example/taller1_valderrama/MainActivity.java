@@ -31,8 +31,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void paginaWeb(View v){
-       // Intent intent= new Intent (v.getContext(), WebActivity.class);
-       // startActivity(intent);
+        Intent intent= new Intent (v.getContext(), WebActivity.class);
+        startActivity(intent);
 
     }
 

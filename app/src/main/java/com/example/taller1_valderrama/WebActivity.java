@@ -11,11 +11,9 @@ public class WebActivity extends MainActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        WebView myWebView= (WebView) findViewById(R.id.webview);
-        myWebView.loadUrl("http://sauce.pntic.mec.es/~rmarti9/WebBabilonia/Biografias/Fibonacci.htm");
-
-
-
+        setContentView(R.layout.webactivity);
+        WebView myWebView=  findViewById(R.id.webview);
+        myWebView.loadUrl("https://es.wikipedia.org/wiki/Leonardo_de_Pisa");
     }
 
 
