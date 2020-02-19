@@ -47,6 +47,12 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+    public void paises(View v){
+        Intent intent= new Intent (v.getContext(), PaisesActivity.class);
+        startActivity(intent);
+
+    }
+
 
     public void calcularFibonacci(View v) {
 

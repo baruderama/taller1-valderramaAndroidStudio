@@ -14,7 +14,9 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".FactorialActivity"></activity>
+        <activity android:name=".InfoPaisActivity"></activity>
+        <activity android:name=".PaisesActivity" />
+        <activity android:name=".FactorialActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -24,7 +26,6 @@
         </activity>
         <activity android:name=".Activity2" />
         <activity android:name=".WebActivity" />
-
     </application>
 
 </manifest>
