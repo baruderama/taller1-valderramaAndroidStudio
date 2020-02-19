@@ -12,7 +12,7 @@ import org.json.JSONObject;
 import java.io.IOException;
 import java.io.InputStream;
 
-public class InfoPaisActivity extends AppCompatActivity {
+public class InfoPaisActivity extends MainActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

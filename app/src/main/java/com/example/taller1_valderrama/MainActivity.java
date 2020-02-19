@@ -13,17 +13,46 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
     public ArrayList <Integer> serie= new ArrayList<Integer> ();
     public ArrayList <Integer> numerosMult= new ArrayList<Integer> ();
+    public  int contadorFib=0;
+    public  int contadorFac=0;
+    public int aux1=0;
+    public int aux2=0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        TextView i=findViewById(R.id.vecesFibo);
+        i.setText("veces llamado fibo= "+contadorFib);
+        TextView u=findViewById(R.id.vecesFac);
+        u.setText("veces llamado fac= "+contadorFac);
+
+    }
+
+    @Override
+    protected void onRestart(){
+        super.onRestart();
+        String currentDateTimeString = java.text.DateFormat.getDateTimeInstance().format(new Date());
+        if(contadorFib>aux1) {
+            TextView i = findViewById(R.id.vecesFibo);
+            i.setText("veces llamado fibo= " + contadorFib + "\n" + "fecha/hora: " + currentDateTimeString);
+            aux1=contadorFib;
+        }
+        if(contadorFac>aux2) {
+            TextView u = findViewById(R.id.vecesFac);
+            u.setText("veces llamado fac= " + contadorFac + "\n" + "fecha/hora: " + currentDateTimeString);
+            aux2=contadorFac;
+        }
+
+
     }
 
     public void paginaWeb(View v){
@@ -45,6 +74,8 @@ public class MainActivity extends AppCompatActivity {
         Intent intent= new Intent (v.getContext(), FactorialActivity.class);
         intent.putExtra("factorial",numerosMult);
         startActivity(intent);
+        contadorFac++;
+
     }
 
     public void paises(View v){
@@ -55,6 +86,8 @@ public class MainActivity extends AppCompatActivity {
 
 
     public void calcularFibonacci(View v) {
+
+
 
         serie.clear();
         serie.add(0);
@@ -68,11 +101,12 @@ public class MainActivity extends AppCompatActivity {
 
         for(int i=0;i<numerito;i++)
             recursivoFibonacci();
-        calculo=  findViewById(R.id.calculo);
+        //calculo=  findViewById(R.id.calculo);
         //int ultimoNum= serie.get(serie.size()-1);
         Intent intent= new Intent (v.getContext(), Activity2.class);
         intent.putExtra("numero",serie);
         startActivity(intent);
+        contadorFib++;
         //calculo.setText(calculo.getText()+"\n"+ultimoNum);
     }
 
